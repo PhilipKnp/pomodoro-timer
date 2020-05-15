@@ -144,18 +144,18 @@ h1 {
 /*--------------------------------------Settings Container*/
 .settings-header {
     font-size: 32px;
-    grid-area: 5 / 3 / 5 / 6;
+    grid-area: 4 / 3 / 4 / 6;
     align-self: center;
     margin: 0;
 }
 .instructions {
-    grid-area: 5 / 4 / 5 / 11;
+    grid-area: 4 / 4 / 4 / 11;
     font-size: 20px;
     align-self: center;
     margin: 0;
 }
 .settings-container {
-    grid-area: 6 / 3 / 10 / 11;
+    grid-area: 5 / 3 / 9 / 11;
     border: 3px solid black;
     display: grid;
     justify-items: center;
