@@ -1,12 +1,13 @@
 html, body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
 
 h1 {
     text-align: center;
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
 
 .container {
@@ -21,26 +22,26 @@ h1 {
     grid-area: 1 / 4 / 1 / 5;
 }
 .cycle-label {
-    font-size: 32px;
-    display: flex;
-    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 1 / 1 / 2;
 }
 .counterVariable {
-    font-size: 32px;
+    grid-area: 2 / 1 / 2 / 2;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-self: flex-end;
+    justify-self: center;
 }
 
 /*-------------------------------------Timer Container*/
 .pomodoro-container {
     width: 100%;
     height: 150px;
-    grid-area: 1 / 6 / 1 / 8;
+    grid-area: 1 / 4 / 1 / 10;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 75px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 75px);
 
     font-size: 32px;
 
@@ -53,10 +54,10 @@ h1 {
 .work-label {
     align-self: center;
     justify-self: center;
-    grid-area: 1 / 1 / 1 / 2;
+    grid-area: 1 / 2 / 1 / 3;
 }
 .workTimer {
-    grid-area: 2 / 1 / 2 / 2;
+    grid-area: 2 / 2 / 2 / 3;
     display: flex;
     align-self: flex-end;
     justify-self: center;
@@ -65,18 +66,32 @@ h1 {
 .rest-label {
     align-self: center;
     justify-self: center;
-    grid-area: 1 / 2 / 1 / 3;
+    grid-area: 1 / 3 / 1 / 4;
 }
 .restTimer {
-    grid-area: 2 / 2 / 2 / 3;
+    grid-area: 2 / 3 / 2 / 4;
     display: flex;
     align-self: flex-end;
     justify-self: center;
 }
-
+/*---------------------------------Break Container*/
+.break-container {
+    grid-area: 1 / 9 / 1 / 10;
+}
+.break-label {
+    align-self: center;
+    justify-self: center;
+    grid-area: 1 / 4 / 1 / 5;
+}
+.breakTimer {
+    grid-area: 2 / 4 / 2 / 5;
+    display: flex;
+    align-self: flex-end;
+    justify-self: center;
+}
 /*----------------------------------Button Container*/
 .button-container {
-    grid-area: 2 / 5 / 4 / 9;
+    grid-area: 2 / 4 / 4 / 10;
     width: 100%;
 
     display: flex;
@@ -85,11 +100,11 @@ h1 {
 }
 .btn {
     height: 50px;
-    width: 20%;
+    width: 30%;
     background-color: white;
     border: 2px solid black;
     border-radius: 50px;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
 }
 .btn:focus {
@@ -104,10 +119,6 @@ h1 {
 }
 .btn:nth-child(2):hover {
     background-color: #E57F36;
-}
-.btn:nth-child(3) {
-    margin: 0 15px 0 0;
-    background-color: #ff8e3c;
 }
 .btn:nth-child(3):hover {
     background-color: #E57F36;
@@ -125,34 +136,17 @@ h1 {
     background-color: #D9483B;
 }
 
-/*---------------------------------Break Container*/
-.break-container {
-    grid-area: 1 / 9 / 1 / 10;
-}
-.break-label {
-    font-size: 32px;
-    display: flex;
-    justify-content: center;
-}
-.breakTimer {
-    font-size: 32px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 /*--------------------------------------Settings Container*/
 .settings-header {
     font-size: 32px;
-    grid-area: 5 / 3 / 5 / 6;
+    grid-area: 5 / 3 / 5 / 5;
     align-self: center;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 .instructions {
     grid-area: 5 / 4 / 5 / 11;
     font-size: 20px;
-    align-self: center;
-    margin: 0;
+    align-self: flex-start;
 }
 .settings-container {
     grid-area: 6 / 3 / 10 / 11;
@@ -212,41 +206,38 @@ h1 {
 
 .input-field-settings {
     justify-self: center;
-    align-self: center;
+    align-self: flex-start;
     justify-items: center;
-    margin: -30px 0 0 0;
+    margin: -10px 0 0 0;
     border: none;
     background-color: #ffffff00;
-    font-size: 38px;
-    width: 65px;
+    font-size: 30px;
+    width: 55px;
     height: 50px;
-    font-family: 'Poppins', sans-serif;
 }
-
 .settings-label {
-    font-size: 28px;
+    font-size: 24px;
     margin-top: 10px;
     align-self: flex-start;
     font-weight: bold;
 }
 
+.br-tag {
+    display: none;
+}
 
 /*Intructions*/
 .header-recommended {
-    grid-area: 3 / 1 / 3 / 3;
+    grid-area: 3 / 1 / 3 / 5;
     align-self: center;
-    justify-self: start;
+    text-align: center;
     font-size: 28px;
-    margin: 5px 0 0 25px;
+    margin: 15px 0 15px 0;
 }
 .recommended-buttons {
-    grid-area: 3 / 2 / 5 / 5;
+    grid-area: 4 / 1 / 4 / 5;
     margin: 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .semicolon {
@@ -259,21 +250,21 @@ h1 {
     justify-self: center;
     align-self: flex-start;
 
-    font-size: 38px;
-    margin: -12px 0 0 0;
+    font-size: 30px;
+    margin: -10px 0 0 0;
 }
 .recommended-btn {
     height: 40px;
-    font-size: 24px;
+    font-size: 18px;
     border: 1px solid black;
     padding: 0 20px 0 20px;
     border-radius: 50px;
-    margin: 5px 0 5px 0;
     cursor: pointer;
     background-color: #b8c1ec;
-    align-self: center;
 }
-/*
+.br-tag2 {
+    display: none;
+}
 .recommended-btn:focus {
     outline: none;
 }
@@ -284,133 +275,659 @@ h1 {
     background-color: #A5ADD4; 
     transition: 0.2s;
 }
-*/
+
 .horizontal-line {
     grid-area: 3 / 1 / 3 / 5;
     width: 100%;
-    height: 5%;
     border-top: 1px solid black;
 }
 
 /*input spinner styling*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-    height: 50px;
+    height: 40px;
     opacity: 1;
-    margin-top: 5px;
 }
 
 /*Media Queries*/
-@media (max-width: 1300px){
+@media (max-width: 1770px){
     .recommended-btn {
-        height: 30px;
-        font-size: 18px;
+        height: 40px;
+        font-size: 17px;
         border: 1px solid black;
         padding: 0 20px 0 20px;
         border-radius: 50px;
-        margin: 10px 0 10px 0;
         cursor: pointer;
         background-color: #b8c1ec;
-        align-self: center;
     }
-    .settings-header {
-        font-size: 32px;
-        grid-area: 5 / 3 / 5 / 6;
-        align-self: center;
-        margin: 0;
-    }
-    .instructions {
-        grid-area: 5 / 5 / 5 / 11;
+}
+
+@media (max-width: 1710px){
+    .recommended-btn {
+        height: 40px;
         font-size: 14px;
-        align-self: center;
-        margin: 0;
-    }
-    .input-field-settings {
-        justify-self: center;
-        align-self: center;
-        justify-items: center;
-        margin: -30px 0 0 0;
-        border: none;
-        background-color: #ffffff00;
-        font-size: 30px;
-        width: 55px;
-        height: 50px;
-        font-family: 'Poppins', sans-serif;
+        border: 1px solid black;
+        padding: 0 20px 0 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: #b8c1ec;
     }
     .settings-label {
-        font-size: 18px;
+        font-size: 22px;
         margin-top: 10px;
         align-self: flex-start;
         font-weight: bold;
     }
-    .header-recommended {
-        grid-area: 3 / 1 / 3 / 2;
-        align-self: center;
-        justify-self: start;
-        font-size: 20px;
-        margin: 5px 0 0 25px;
+}
+
+@media (max-width: 1660px){
+    .instructions {
+    grid-area: 5 / 3 / 5 / 11;
+    font-size: 18px;
+    align-self: center;
+    margin: 0;
     }
+    .header-recommended {
+        font-size: 24px;
+        margin: 10px 0 10px 0;
+    }
+    .settings-container {
+        grid-area: 6 / 3 / 10 / 11;
+    }
+    .settings-header {
+        grid-area: 4 / 3 / 4 / 5;
+        margin-bottom: -25px;
+    }
+}
+
+@media (max-width: 1570px){
+    .settings-label {
+        font-size: 20px;
+        margin-top: 10px;
+        align-self: flex-start;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 1510px){
     .button-container {
         grid-area: 2 / 4 / 4 / 10;
+        margin-top: 20px;
+    }
+    .btn {
+        width: 40%;
+    }
+    .btn:nth-child(2) {
+        margin: 0 15px 0 15px;
+        background-color: #ff8e3c;
+    }
+}
+
+@media (max-width: 1430px){
+    .settings-label {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .input-field-settings {
+        font-size: 28px;
+    }
+    .recommended-btn {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 1276px){
+    .settings-label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 1240px){
+    .header-recommended {
+        font-size: 20px;
+        justify-self: left;
+        margin-left: 20px;
+        grid-area: 3 / 1 / 3 / 3;
+    }
+    .recommended-buttons {
+        grid-area: 3 / 2 / 5 / 5;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+    .recommended-btn {
+        margin-bottom: -15px;
+    }
+    .recommended-btn:nth-child(2) {
+        margin: 0px;
+    }
+}
+
+@media (max-width: 1145px){
+    .settings-label {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .input-field-settings {
+        font-size: 26px;
+    }
+    .recommended-buttons {
+        grid-area: 3 / 3 / 5 / 5;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .settings-header {
+        font-size: 28px;
+    }
+    .instructions {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1100px){
+    .container {
+        height: 1200px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(19, 1fr);
+    }
+    .pomodoro-container {
         width: 100%;
-    
+        height: 300px;
+        grid-area: 1 / 4 / 3 / 10;
+        display: grid;
+        font-size: 38px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 75px);
+    }
+    .settings-header {
+        grid-area: 7 / 3 / 7 / 5;
+    }
+    .instructions {
+        grid-area: 8 / 3 / 8 / 11;
+    }
+    .button-container {
+        grid-area: 6 / 4 / 7 / 10;
+        margin-top: 25px;
+    }
+
+    .cycle-label {
+        grid-area: 3 / 1 / 3 / 3;
+    }
+    .counterVariable {
+        grid-area: 4 / 1 / 4 / 3; 
+        margin-bottom: -10px;
+    }
+
+    .work-label {
+        grid-area: 1 / 1 / 1 / 3;
+    }
+    .workTimer {
+        grid-area: 2 / 1 / 3 / 3;
+        margin-bottom: -10px;
+    }
+
+    .rest-label {
+        grid-area: 1 / 3 / 1 / 5;
+    }
+    .restTimer {
+        grid-area: 2 / 3 / 2 / 5;
+        margin-bottom: -10px;
+    }
+
+    .break-label {     
+        grid-area: 3 / 3 / 3 / 5;
+    }
+    .breakTimer {
+        grid-area: 4 / 3 / 4 / 5;
+        margin-bottom: -10px;
+    }
+
+    .input-field-settings {
+        width: 55px;
+        font-size: 50px;
+    }
+    .semicolon-settings {
+        font-size: 50px;
+        margin: -25px 0 0 0;
+    }
+
+    .settings-container {
+        grid-area: 9 / 3 / 19 / 11;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+    .change-work-time-label {
+        grid-area: 1 / 1 / 1 / 5;
+        font-size: 30px;
+    }
+    .change-work-time {
+        grid-area: 2 / 1 / 2 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .change-rest-time-label {
+        grid-area: 3 / 1 / 3 / 5;
+        font-size: 30px;
+    }
+    .change-rest-time {
+        grid-area: 4 / 1 / 4 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .change-break-time-label {
+        grid-area: 5 / 1 / 5 / 5;
+        font-size: 30px;
+    }
+    .change-break-time {
+        grid-area: 6 / 1 / 6 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .change-cycle-label {
+        grid-area: 7 / 1 / 7 / 5;
+        font-size: 30px;
+    }
+    .change-cycle-for-break {
+        grid-area: 8 / 1 / 8 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .horizontal-line {
+        grid-area: 9 / 1 / 9 / 5;
+    }
+
+    .header-recommended {
+        grid-area: 9 / 1 / 13 / 3;
+    }
+    .recommended-buttons {
+        grid-area: 9 / 2 / 13 / 5;
+        display: grid;
+        justify-items: flex-end;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .recommended-btn {
+        font-size: 14px;
+        width: 100%;
+    }
+    .br-tag2 {
+        display: block;
+    }
+}
+
+@media (max-width: 1030px){
+    .container {
+        height: 1200px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(23, 1fr);
+    }
+    .settings-container {
+        grid-area: 10 / 3 / 23 / 11;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(11, 1fr);
+    }
+    .settings-header {
+        grid-area: 8 / 3 / 8 / 5;
+    }
+    .instructions {
+        grid-area: 9 / 3 / 9 / 11;
+    }
+    .button-container {
+        grid-area: 7 / 4 / 8 / 10;
+        margin-top: 25px;
+    }
+    .horizontal-line {
+        grid-area: 9 / 1 / 9 / 5;
+    }
+
+    .header-recommended {
+        grid-area: 9 / 1 / 9 / 5;
+        justify-self: center;
+        font-size: 26px;
+    }
+    .recommended-buttons {
+        grid-area: 10 / 1 / 13 / 5;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        margin-right: 0;
+    }
+    .recommended-btn {
+        font-size: 18px;
+        width: 100%;
+    }
+    .br-tag2 {
+        display: none;
+    }
+    #lowFocusBtn {
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 880px){
+    .header-recommended {
+        grid-area: 9 / 1 / 9 / 5;
+        justify-self: center;
+        font-size: 22px;
+    }
+    .recommended-btn {
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px){
+    .change-work-time-label {
+        grid-area: 1 / 1 / 1 / 5;
+        font-size: 22px;
+    }
+    .change-work-time {
+        grid-area: 2 / 1 / 2 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .change-rest-time-label {
+        grid-area: 3 / 1 / 3 / 5;
+        font-size: 22px;
+    }
+    .change-rest-time {
+        grid-area: 4 / 1 / 4 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .change-break-time-label {
+        grid-area: 5 / 1 / 5 / 5;
+        font-size: 22px;
+    }
+    .change-break-time {
+        grid-area: 6 / 1 / 6 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .change-cycle-label {
+        grid-area: 7 / 1 / 7 / 5;
+        font-size: 22px;
+    }
+    .change-cycle-for-break {
+        grid-area: 8 / 1 / 8 / 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .input-field-settings {
+        width: 45px;
+        font-size: 36px;
+    }
+    .semicolon-settings {
+        font-size: 36px;
+        margin: -15px 0 0 0;
+    }
+    .recommended-buttons {
+        padding: 0 5px 0 5px;
+    }
+}
+
+@media (max-width: 650px){
+    .container {
+        height: 1800px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(20, 1fr);
+    }
+    .pomodoro-container {
+        width: 100%;
+        height: 480px;
+        grid-area: 1 / 2 / 5 / 12;
+        display: grid;
+        font-size: 38px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(8, 60px) ;
+    }
+    .settings-header {
+        grid-area: 10 / 2 / 10 / 5;
+        font-size: 35px;
+    }
+    .instructions {
+        grid-area: 11 / 2 / 11 / 12;
+        font-size: 20px;
+    }
+    .button-container {
+        grid-area: 6 / 2 / 10 / 12;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
     .btn {
-        height: 50px;
-        width: 35%;
-        background-color: white;
-        border: 2px solid black;
-        border-radius: 50px;
-        font-size: 24px;
-        cursor: pointer;
-    }
-    .pomodoro-container {
         width: 100%;
-        height: 150px;
-        grid-area: 1 / 5 / 1 / 9;
-    
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 75px);
-    
-        font-size: 32px;
-    
-        border: 3px solid black;
-    
-        -webkit-box-shadow: 2px 5px 16px 0px rgb(43, 44, 52), 5px 8px 20px 5px rgba(0,0,0,0); 
-        box-shadow: 2px 5px 16px 0px #2b2c34, 5px 8px 20px 5px rgba(0,0,0,0);
+        height: 70px;
+        font-size: 40px;
     }
-    .cycles-container {
-        grid-area: 1 / 3 / 1 / 4;
+    .btn:nth-child(2){
+        margin: 5px 0 5px 0;
     }
+
     .cycle-label {
-        font-size: 32px;
-        display: flex;
-        justify-content: center;
+        grid-area: 5 / 1 / 7 / 3;
+        font-size: 45px;
+        align-self: center;
     }
     .counterVariable {
-        font-size: 32px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        grid-area: 5 / 3 / 7 / 5; 
+        font-size: 45px;
+        align-self: center;
     }
-    .break-container {
-        grid-area: 1 / 10 / 1 / 11;
+
+    .work-label {
+        grid-area: 1 / 1 / 3 / 3;
+        font-size: 45px;
+        align-self: center;
     }
-    .break-label {
-        font-size: 32px;
-        display: flex;
-        justify-content: center;
+    .workTimer {
+        grid-area: 1 / 3 / 3 / 5;
+        font-size: 45px;
+        align-self: center;
+    }
+
+    .rest-label {
+        grid-area: 3 / 1 / 5 / 3;
+        font-size: 45px;
+        align-self: center;
+    }
+    .restTimer {
+        grid-area: 3 / 3 / 5 / 5;
+        font-size: 45px;
+        align-self: center;
+    }
+
+    .break-label {     
+        grid-area: 7 / 1 / 9 / 3;
+        font-size: 45px;
+        align-self: center;
     }
     .breakTimer {
-        font-size: 32px;
+        grid-area: 7 / 3 / 9 / 5;
+        font-size: 45px;
+        align-self: center;
+    }
+
+    .input-field-settings {
+        width: 50px;
+        font-size: 45px;
+    }
+
+    .semicolon {
+        font-size: 35px;
+    }
+
+    .semicolon-settings {
+        font-size: 45px;
+        margin: -20px 0 0 0;
+    }
+
+    .settings-container {
+        grid-area: 12 / 2 / 21 / 12;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        margin-top: 20px;
+    }
+    .change-work-time-label {
+        grid-area: 1 / 1 / 3 / 3;
+        font-size: 26px;
+        align-self: center;
+        margin-left: 20px;
+        justify-self: start;
+    }
+    .change-work-time {
+        grid-area: 1 / 3 / 3 / 5;
+        align-self: center;
+        justify-self: flex-end;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        margin-right: 20px;
     }
+
+    .change-rest-time-label {
+        grid-area: 3 / 1 / 5 / 3;
+        font-size: 24px;
+        align-self: center;
+        margin-left: 20px;
+        justify-self: start;
+    }
+    .change-rest-time {
+        grid-area: 4 / 3 / 4 / 5;
+        align-self: center;
+        justify-self: flex-end;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -20px;
+        margin-right: 20px;
+    }
+
+    .change-break-time-label {
+        grid-area: 5 / 1 / 7 / 3;
+        font-size: 24px;
+        align-self: center;
+        margin-left: 20px;
+        justify-self: start;
+    }
+    .change-break-time {
+        grid-area: 6 / 3 / 6 / 5;
+        align-self: center;
+        justify-self: flex-end;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -20px;
+        margin-right: 20px;
+    }
+
+    .change-cycle-label {
+        grid-area: 7 / 1 / 9 / 3;
+        font-size: 24px;
+        align-self: center;
+        margin-left: 20px;
+        justify-self: start;
+    }
+    .change-cycle-for-break {
+        grid-area: 8 / 3 / 8 / 5;
+        align-self: center;
+        justify-self: flex-end;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -20px;
+        margin-right: 20px;
+    }
+
+    .horizontal-line {
+        grid-area: 9 / 1 / 9 / 5;
+    }
+
+    .header-recommended {
+        grid-area: 9 / 1 / 9 / 5;
+        width: 100%;
+    }
+    .recommended-buttons {
+        grid-area: 10 / 1 / 13 / 5;
+        display: grid;
+        justify-items: flex-end;
+        align-items: center;
+    }
+    .recommended-btn {
+        font-size: 22px;
+        height: 60px;
+        width: 100%;
+    }
+    .br-tag2 {
+        display: none;
+    }
+}
+
+@media (max-width: 540px){
+    .input-field-settings {
+        width: 40px;
+        font-size: 35px;
+    }
+    .semicolon-settings {
+        font-size: 35px;
+        margin: -15px 0 0 0;
+    }
+    .settings-label {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px){
+
     
-    
+    .recommended-btn {
+        font-size: 18px;
+    }
 }

@@ -11,15 +11,20 @@
 <body>
     <h1>Pomodoro Timer</h1>
     <div class="container">
-
+        <!--
         <div class="cycles-container">
             <label class="cycle-label">Cycles:</label>
             <div class="counterVariable">
                 <p id="counter">0</p>
             </div>
         </div>
-
+        -->
         <div class="pomodoro-container">
+            <label class="cycle-label">Cycles:</label>
+            <div class="counterVariable">
+                <p id="counter">0</p>
+            </div>
+
             <label class="work-label">Work:</label>
             <div class="workTimer">
                 <p id="work_minutes">25</p><p class="semicolon">:</p><p id="work_seconds">00</p>
@@ -29,22 +34,26 @@
             <div class="restTimer">
                 <p id="rest_minutes">05</p><p class="semicolon">:</p><p id="rest_seconds">00</p>
             </div>
-        </div>
 
-        <div class="button-container">
-            <button id="start" class="btn">Start</button>
-            <button id="stop" class="btn">Pause</button>
-            <button id="resume" class="btn">Resume</button>
-            <button id="reset" class="btn">Reset</button>
-        </div>
-
-        <div class="break-container">
             <label class="break-label">Break:</label>
             <div class="breakTimer">
                 <p id="break_hours">01</p><p class="semicolon">:</p><p id="break_minutes">00</p><p class="semicolon">:</p><p id="break_seconds">00</p>
             </div>
         </div>
 
+        <div class="button-container">
+            <button id="start" class="btn">Start</button>
+            <button id="stop" class="btn">Pause</button>
+            <button id="reset" class="btn">Reset</button>
+        </div>
+        <!--
+        <div class="break-container">
+            <label class="break-label">Break:</label>
+            <div class="breakTimer">
+                <p id="break_hours">01</p><p class="semicolon">:</p><p id="break_minutes">00</p><p class="semicolon">:</p><p id="break_seconds">00</p>
+            </div>
+        </div>
+        -->
         <!-- Settings -->
         <h2 class="settings-header">Settings:</h2>
         <p class="instructions">Customize your <b>Pomodoro Timer</b> the way you want, change the <b>Work Time</b>, <b>Rest Time</b>, <b>Break Time</b> and after how many cycles the Break should occur.</p>
@@ -64,12 +73,12 @@
                 <input id="break-hours-settings" class="input-field-settings" type="number" max="99" min="0" value="01"><p class="semicolon-settings">&nbsp;:&nbsp;</p><input id="break-minutes-settings" class="input-field-settings" type="number" max="60" min="0" value="00"><p class="semicolon-settings">&nbsp;:&nbsp;</p><input id="break-seconds-settings" class="input-field-settings" type="number" max="60" min="0" value="00">
             </div>
 
-            <label class="change-cycle-label settings-label">Cycles for Break</label>
+            <label class="change-cycle-label settings-label">Cycle amount<br class="br-tag"> for Break</label>
             <div class="change-cycle-for-break">
                 <input id="cycleAmount" class="input-field-settings" type="number" max="99" min="0" value="4">
             </div>
             <div class="horizontal-line"></div>
-            <h2 class="header-recommended">Recommended Settings:</h2>
+            <h2 class="header-recommended">Recommended<br class="br-tag2"> Settings:</h2>
             <div class="recommended-buttons">
                 <button id="lowFocusBtn" class="recommended-btn">25:00 Work Time / 05:00 Rest Time / 1:00:00 Break after 4 Cycles</button>
                 <button id="highFocusBtn" class="recommended-btn">45:00 Work Time / 15:00 Rest Time / 1:00:00 Break after 2 Cycles</button>

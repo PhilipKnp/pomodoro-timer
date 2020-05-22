@@ -2,7 +2,6 @@
 var start = document.getElementById('start');
 var reset = document.getElementById('reset');
 var stop = document.getElementById('stop');
-var resume = document.getElementById('resume');
 
 var workMinutes = document.getElementById("work_minutes");
 var workSeconds = document.getElementById("work_seconds");
@@ -37,6 +36,7 @@ var startBreakTimer;
 
 start.addEventListener('click', function(){
     if(startTimer === undefined){
+        /*
         workMinutes.innerText = workTimeMinutesValue.value;
         workSeconds.innerText = workTimeSecondsValue.value;
 
@@ -46,7 +46,7 @@ start.addEventListener('click', function(){
         breakHours.innerText = breakTimeHoursValue.value;
         breakMinutes.innerText = breakTimeMinutesValue.value;
         breakSeconds.innerText = breakTimeSecondsValue.value;
-
+        */
         startTimer = setInterval(timer, 1000);
     } else {
         console.log("startTimer already running")
@@ -66,13 +66,8 @@ reset.addEventListener('click', function(){
     breakSeconds.innerText = breakTimeSecondsValue.value;
 
     document.getElementById('counter').innerText = 0;
-
+    document.querySelector('.pomodoro-container').style.backgroundColor = "white";
     stopInterval()
-})
-
-//Resume button
-resume.addEventListener('click', function(){
-    startTimer = setInterval(timer, 1000);
 })
 
 //Stop Button
