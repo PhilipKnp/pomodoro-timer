@@ -72,6 +72,7 @@ reset.addEventListener('click', function(){
 
 //Stop Button
 stop.addEventListener('click', function(){
+    document.querySelector('.pomodoro-container').style.backgroundColor = "#ff8e3c";
     stopInterval()
     stopBreakInterval()
 })
@@ -161,6 +162,7 @@ function timer(){
     //Start Break Timer if counter is at specific number
 
     if(cycleAmountValue.value == virtualCounter){
+        document.querySelector('.pomodoro-container').style.backgroundColor = "#c14034";
         virtualCounter = 0;
         console.log(virtualCounter)
         stopInterval()
@@ -201,7 +203,7 @@ function startBreak() {
 
 //recommended buttons
 lowFocusBtn.addEventListener('click', function(){
-    workTimeMinutesValue.value = 25;
+    workTimeMinutesValue.value = 20;
     workTimeSecondsValue.value = "00";
 
     restTimeMinutesValue.value = "05";
@@ -211,9 +213,9 @@ lowFocusBtn.addEventListener('click', function(){
     breakTimeMinutesValue.value = "00"; 
     breakTimeSecondsValue.value = "00";
 
-    cycleAmountValue.value = 4;
+    cycleAmountValue.value = 6;
 
-    workMinutes.innerText = 25;
+    workMinutes.innerText = 20;
     workSeconds.innerText = "00";
     restMinutes.innerText = "05";
     restSeconds.innerText = "00";
